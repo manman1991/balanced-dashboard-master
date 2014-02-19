@@ -1,0 +1,188 @@
+@inputBorderColor: @gray3;
+@inputFullWidth: 350px;
+@inputPadding: 8px;
+@inputHeight: auto;
+@inputFontSize: 18px;
+
+form {
+  margin: 0;
+
+  legend {
+    margin-bottom: 0;
+  }
+
+  label {
+    font-family: nimbussannov-sembol;
+    color: #000;
+    margin-bottom: 0;
+
+    &:after {
+      content: ':';
+      padding-right: 3px;
+    }
+
+    &.inline {
+      display: inline;
+    }
+  }
+
+  select,
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="color"] {
+    border: 1px solid @inputBorderColor;
+    border-radius: 0;
+    color: #000;
+    font-size: @inputFontSize;
+    width: @inputFullWidth / 2;
+    padding: @inputPadding;
+    height: @inputHeight;
+    line-height: 22px;
+    margin-bottom: 0;
+    &.full {
+      width: @inputFullWidth - @inputPadding * 2;
+    }
+  }
+
+  input[type="radio"] {
+    margin: 0;
+  }
+
+  .radio-label {
+    display: inline;
+    font-family: 'nimbussannov-reg';
+    padding: 0px 15px 0px 5px;
+    &:after {
+      content: '';
+      padding-right: 0px;
+    }
+  }
+
+  .input-append,
+  .input-prepend {
+    .add-on {
+      font-size: @inputFontSize;
+      height: 30px;
+      min-width: @inputFontSize;
+      line-height: 1.7;
+      border-radius: 0;
+      background-color: #000;
+      color: #fff;
+      border-color: #000;
+      &:first-child {
+        .border-radius(0);
+      }
+    }
+  }
+}
+
+.form-horizontal:not(.split-labels) {
+  .control-group {
+    margin: 2px 0 2px 0;
+  }
+  .control-label {
+    text-align: left;
+    width: 40%;
+  }
+  .controls {
+    margin-left: auto;
+    width: 60%;
+  }
+}
+
+.form-horizontal {
+  &.split-labels {
+    .control-label {
+      text-align: left;
+    }
+  }
+}
+
+.edit-inline {
+  input, select {
+    display: none;
+  }
+  .header-action-container {
+    display: inline;
+  }
+  a.edit {
+    float: right;
+    font-family: nimbussannov-med;
+    font-size: 13px;
+    .cssicon(
+      @url: @iconsFile,
+      @width: 14px,
+      @height: 14px,
+      @display: block
+    );
+    background-position: -18px -438px;
+    &:hover {
+      background-position: -68px -438px;
+    }
+  }
+  a.disclosure {
+    float: right;
+    font-family: nimbussannov-med;
+    font-size: 13px;
+    .cssicon(
+      @url: @iconsFile,
+      @width: 14px,
+      @height: 14px,
+      @display: block
+    );
+    background-position: -18px -847px;
+    &:hover {
+      background-position: -68px -847px;
+    }
+    &.open {
+      background-position: -118px -847px;
+      &:hover {
+        background-position: -168px -847px;
+      }
+    }
+  }
+  &.edit {
+    input, select {
+      display: inherit;
+    }
+    .inline-label {
+      display: none;
+    }
+    .inline-edit {
+      background-color: @gray6;
+      color: #d9d9d9;
+    }
+  }
+  .inline-label {
+    padding-top: 5px;
+    display: inline-block;
+  }
+  .help-inline {
+    margin: 0;
+  }
+}
+
+.control-group {
+  margin-bottom: 0;
+  &.error {
+    &.critical {
+    }
+  }
+}
+
+.recommended-field {
+  font-family: nimbussannov-med;
+  font-style: italic;
+}
